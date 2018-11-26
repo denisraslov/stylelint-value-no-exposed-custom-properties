@@ -5,7 +5,7 @@ A [stylelint](https://github.com/stylelint/stylelint) plugin that reveals values
 
 A error from the plugin looks like this:
 ```
-1:1  ✖  The value (or a part of it) should be presented as a CSS variable: "#FFF" is "--white"
+1:1  ✖  The value (or a part of it) should be presented as a custom property: "#FFF" is "--white"
 ```
 
 ## Installation
