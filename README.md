@@ -16,7 +16,7 @@ npm install stylelint-postcss-custom-properties
 ## Usage
 
 Add it to your stylelint config `plugins` array, then add `"plugin/postcss-custom-properties"` to your rules,
-specifying the `variablesJsonFilePath` option with path of a JSON-file that contains list of custom properties.
+specifying the `customPropertiesJsonFilePath` option with path of a JSON-file that contains list of custom properties.
 
 Like so:
 
@@ -29,7 +29,7 @@ Like so:
   "rules": {
     // ...
     "plugin/postcss-custom-properties": {
-       "variablesJsonFilePath": "./customProperties.json"
+       "customPropertiesJsonFilePath": "./customProperties.json"
     },
     // ...
   }
