@@ -1,5 +1,4 @@
 # stylelint-postcss-custom-properties
-A stylelint plugin that reveals values defined with postcss-custom-properties
 
 A [stylelint](https://github.com/stylelint/stylelint) plugin that reveals values defined with [PostCSS Custom Properties plugin](https://github.com/postcss/postcss-custom-properties).
 
