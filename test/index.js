@@ -3,7 +3,7 @@ var plugin = require('..');
 
 testRule(plugin.rule, {
   ruleName: plugin.ruleName,
-  config: { variablesJsonFilePath: './test/variables.json' },
+  config: { customPropertiesJsonFilePath: './test/variables.json' },
   skipBasicChecks: true,
 
   accept: [
@@ -13,7 +13,7 @@ testRule(plugin.rule, {
   reject: [
     {
       code: '.Foo { color: #FFF; }',
-      message: 'The value (or a part of it) should be presented as a CSS variable:' +
+      message: 'The value (or a part of it) should be presented as a custom property:' +
         ' "#FFF" is "white" (' + plugin.ruleName + ')',
       line: 1,
       column: 1

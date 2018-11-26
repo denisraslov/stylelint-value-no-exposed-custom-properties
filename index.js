@@ -1,6 +1,6 @@
 var stylelint = require('stylelint');
 
-var ruleName = 'plugin/stylelint-postcss-custom-properties';
+var ruleName = 'plugin/postcss-custom-properties';
 
 function foundVariableInValue(variables, value) {
   for (var i in variables) {
@@ -10,9 +10,9 @@ function foundVariableInValue(variables, value) {
 
 module.exports = stylelint.createPlugin(ruleName, function(options) {
   return function(root, result) {
-    if (!options || !options.variablesJsonFilePath) return;
+    if (!options || !options.customPropertiesJsonFilePath) return;
 
-    var variables = require(process.cwd() + '/' + options.variablesJsonFilePath);
+    var variables = require(process.cwd() + '/' + options.customPropertiesJsonFilePath);
 
     root.walkRules(function(rule) {
       rule.walkDecls(function(decl) {
@@ -25,7 +25,7 @@ module.exports = stylelint.createPlugin(ruleName, function(options) {
             node: root,
             line: decl.source.start.line,
             column: decl.source.start.column,
-            message: 'The value (or a part of it) should be presented as a CSS variable: "' + 
+            message: 'The value (or a part of it) should be presented as a custom property: "' + 
               decl.value + '" is "' + foundVariable + '" (' + ruleName + ')'
           });
         }
