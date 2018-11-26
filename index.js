@@ -12,7 +12,7 @@ module.exports = stylelint.createPlugin(ruleName, function(options) {
   return function(root, result) {
     if (!options || !options.variablesJsonFilePath) return;
 
-    var variables = require(options.file);
+    var variables = require(process.cwd() + '/' + options.variablesJsonFilePath);
 
     root.walkRules(function(rule) {
       rule.walkDecls(function(decl) {
