@@ -28,7 +28,7 @@ module.exports = stylelint.createPlugin(ruleName, function(options) {
             line: decl.source.start.line,
             column: decl.source.start.column,
             message: 'The value (or a part of it) should be presented as a custom property: "' + 
-              decl.value + '" is "' + foundVariable + '" (' + ruleName + ')'
+              customProperties[foundVariable] + '" is "' + foundVariable + '" (' + ruleName + ')'
           });
         }
       });
