@@ -2,23 +2,25 @@ var stylelint = require('stylelint');
 
 var ruleName = 'plugin/postcss-custom-properties';
 
-function foundVariableInValue(variables, value) {
-  for (var i in variables) {
-    if (value.includes(variables[i])) return i;
+function foundCustomPropertyInValue(properies, value) {
+  for (var i in properies) {
+    if (value.includes(properies[i])) return i;
   }
 }
 
 module.exports = stylelint.createPlugin(ruleName, function(options) {
   return function(root, result) {
-    if (!options || !options.customPropertiesJsonFilePath) return;
+    if (!options || !options.customPropertiesFilePath) return;
 
-    var variables = require(process.cwd() + '/' + options.customPropertiesJsonFilePath);
+    var file = require(process.cwd() + '/' + options.customPropertiesFilePath)
+    var customProperties = file.customProperties || file['custom-properties'];
+
+    if (!customProperties) return;
 
     root.walkRules(function(rule) {
       rule.walkDecls(function(decl) {
-        var foundVariable = foundVariableInValue(variables, decl.value);
+        var foundVariable = foundCustomPropertyInValue(customProperties, decl.value);
         if (foundVariable) {
-          console.log(foundVariable);
           stylelint.utils.report({
             ruleName: ruleName,
             result: result,
