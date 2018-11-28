@@ -20,13 +20,12 @@ module.exports = stylelint.createPlugin(ruleName, function(options) {
     root.walkRules(function(rule) {
       rule.walkDecls(function(decl) {
         var foundVariable = foundCustomPropertyInValue(customProperties, decl.value);
+        
         if (foundVariable) {
           stylelint.utils.report({
             ruleName: ruleName,
             result: result,
-            node: root,
-            line: decl.source.start.line,
-            column: decl.source.start.column,
+            node: decl,
             message: 'The value (or a part of it) should be presented as a custom property: "' + 
               customProperties[foundVariable] + '" is "' + foundVariable + '" (' + ruleName + ')'
           });

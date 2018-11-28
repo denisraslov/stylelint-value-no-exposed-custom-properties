@@ -16,7 +16,7 @@ testRule(plugin.rule, {
       message: 'The value (or a part of it) should be presented as a custom property:' +
         ' "#FFF" is "white" (' + plugin.ruleName + ')',
       line: 1,
-      column: 1
+      column: 8
     },
   ],
 });
@@ -36,7 +36,7 @@ testRule(plugin.rule, {
       message: 'The value (or a part of it) should be presented as a custom property:' +
         ' "#FFF" is "white" (' + plugin.ruleName + ')',
       line: 1,
-      column: 1
+      column: 8
     },
   ],
 });
