@@ -1,6 +1,6 @@
 {
   "name": "stylelint-postcss-custom-properties",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A stylelint plugin that reveals values defined with postcss-custom-properties",
   "main": "index.js",
   "scripts": {
