@@ -18,6 +18,13 @@ testRule(plugin.rule, {
       line: 1,
       column: 8
     },
+    {
+      code: '.Foo { color: #fff; }',
+      message: 'The value (or a part of it) should be presented as a custom property:' +
+        ' "#fff" is "white" (' + plugin.ruleName + ')',
+      line: 1,
+      column: 8
+    },
   ],
 });
 
@@ -35,6 +42,13 @@ testRule(plugin.rule, {
       code: '.Foo { color: #FFF; }',
       message: 'The value (or a part of it) should be presented as a custom property:' +
         ' "#FFF" is "white" (' + plugin.ruleName + ')',
+      line: 1,
+      column: 8
+    },
+    {
+      code: '.Foo { color: #fff; }',
+      message: 'The value (or a part of it) should be presented as a custom property:' +
+        ' "#fff" is "white" (' + plugin.ruleName + ')',
       line: 1,
       column: 8
     },
