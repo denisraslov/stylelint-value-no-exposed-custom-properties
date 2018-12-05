@@ -51,6 +51,8 @@ function checkDeclOnCustomProperty(decl, customProperties, result) {
 
 module.exports = stylelint.createPlugin(ruleName, function(options) {
   return async function(root, result) {
+    console.log(options)
+
     const importFrom = options && options.importFrom ? options.importFrom : [];
     const customProperties = await getCustomProperties(root, importFrom);
 
