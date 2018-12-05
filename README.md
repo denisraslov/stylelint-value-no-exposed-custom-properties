@@ -18,7 +18,7 @@ Add the plugin to your *stylelint configuration*.
     "stylelint-value-no-exposed-custom-properties"
   ],
   "rules": {
-    "stylelint/value-no-exposed-custom-properties": true || false || null
+    "plugin/value-no-exposed-custom-properties": true || false || null
   }
 }
 ```
@@ -78,7 +78,7 @@ objects.
     "stylelint-value-no-exposed-custom-properties"
   ],
   "rules": {
-    "stylelint/value-no-exposed-custom-properties": [true, {
+    "plugin/value-no-exposed-custom-properties": [true, {
       "importFrom": [
         "path/to/file.css", // => :root { --white: #FFF; }
         "path/to/file.json" // => { "custom-properties": { "--white": "#FFF" } },
