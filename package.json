@@ -1,7 +1,9 @@
 {
-  "name": "stylelint-postcss-custom-properties",
-  "version": "1.2.0",
-  "description": "A stylelint plugin that reveals values defined with postcss-custom-properties",
+  "name": "stylelint-value-no-exposed-custom-properties",
+  "version": "2.0.0",
+  "description": "A stylelint rule to disallow usage of exposed custom properties",
+  "homepage": "https://github.com/denisraslov/stylelint-value-no-exposed-custom-properties#readme",
+  "bugs": "https://github.com/denisraslov/stylelint-value-no-exposed-custom-properties/issues",
   "main": "index.cjs.js",
   "module": "index.es.mjs",
   "files": [
@@ -35,6 +37,7 @@
   "keywords": [
     "stylelint",
     "stylelint-plugin",
+    "stylelint-rule",
     "css",
     "linter",
     "css-variables",
