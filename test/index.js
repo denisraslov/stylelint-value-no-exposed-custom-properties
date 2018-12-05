@@ -4,9 +4,9 @@ var plugin = require('../index.cjs');
 /* TEST JSON IMPORT */
 testRule(plugin.rule, {
   ruleName: plugin.ruleName,
-  config: {
+  config: [true, {
     importFrom: ['./test/customProperties.json']
-  },
+  }],
   skipBasicChecks: true,
 
   accept: [
@@ -34,9 +34,9 @@ testRule(plugin.rule, {
 /* TEST JS IMPORT */
 testRule(plugin.rule, {
   ruleName: plugin.ruleName,
-  config: {
-    importFrom: ['./test/customProperties.js']
-  },
+  config: [true, {
+    importFrom: ['./test/customProperties.json']
+  }],
   skipBasicChecks: true,
 
   accept: [
@@ -64,9 +64,9 @@ testRule(plugin.rule, {
 /* TEST CSS IMPORT */
 testRule(plugin.rule, {
   ruleName: plugin.ruleName,
-  config: {
-    importFrom: ['./test/customProperties.css']
-  },
+  config: [true, {
+    importFrom: ['./test/customProperties.json']
+  }],
   skipBasicChecks: true,
 
   accept: [
@@ -95,7 +95,7 @@ testRule(plugin.rule, {
 testRule(plugin.rule, {
   ruleName: plugin.ruleName,
   skipBasicChecks: true,
-
+  config: true,
   accept: [
     { code: '.Foo { color: #EEE; }' }
   ],
@@ -114,6 +114,22 @@ testRule(plugin.rule, {
         ' "#fff" is "--white" (' + plugin.ruleName + ')',
       line: 1,
       column: 33
+    },
+  ],
+});
+
+/* TEST DISABLED RULE */
+testRule(plugin.rule, {
+  ruleName: plugin.ruleName,
+  skipBasicChecks: true,
+  config: false,
+  accept: [
+    { code: '.Foo { color: #EEE; }' },
+    {
+      code: ':root { --white: #FFF; } .Foo { color: #FFF; }'
+    },
+    {
+      code: ':root { --white: #FFF; } .Foo { color: #fff; }'
     },
   ],
 });
