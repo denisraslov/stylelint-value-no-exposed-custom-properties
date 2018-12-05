@@ -27,7 +27,7 @@ Add the plugin to your [stylelint configuration].
 
 ### true
 
-If the first option is `true`, then the plugin requires defined custom properties to be used instead of exposed values, and the following pattern are _not_ considered violation:
+If the first option is `true`, then the plugin requires defined custom properties to be used instead of the exposed values of them, and the following pattern are _not_ considered violation:
 
 ```css
 :root {
