@@ -1,4 +1,4 @@
-# stylelint-postcss-custom-properties
+# stylelint-postcss-custom-properties <img src="https://jonathantneal.github.io/stylelint-logo.svg" alt="stylelint" width="90" height="90" align="right">
 
 A [stylelint](https://github.com/stylelint/stylelint) plugin that reveals values defined with [PostCSS Custom Properties plugin](https://github.com/postcss/postcss-custom-properties).
 
