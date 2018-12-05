@@ -2,11 +2,6 @@
 
 A [stylelint](https://github.com/stylelint/stylelint) rule to disallow usage of exposed custom properties.
 
-A error from the plugin looks like this:
-```
-1:1  ✖  The value (or a part of it) should be presented as a custom property: "#FFF" is "--white"
-```
-
 ## Installation
 
 ```
@@ -15,7 +10,7 @@ npm install stylelint-value-no-exposed-custom-properties
 
 ## Usage
 
-Add [Value No Exposed Custom Properties] to your [stylelint configuration].
+Add the plugin to your [stylelint configuration].
 
 ```js
 {
@@ -32,9 +27,7 @@ Add [Value No Exposed Custom Properties] to your [stylelint configuration].
 
 ### true
 
-If the first option is `true`, then [Value No Exposed Custom Properties] 
-requires defined custom properties to be used instead of exposed values, and the following pattern are
-_not_ considered violation:
+If the first option is `true`, then the plugin requires defined custom properties to be used instead of exposed values, and the following pattern are _not_ considered violation:
 
 ```css
 :root {
@@ -58,12 +51,16 @@ While the following pattern are considered violation:
 }
 ```
 
+The error is supposed to be the following:
+```
+1:1  ✖  The value (or a part of it) should be presented as a custom property: "#FFF" is "--white"
+```
+
 Custom Properties can be imported using the second option.
 
 ### false
 
-If the first option is `false` or `null`, then
-[Value No Unknown Exposed Properties] does nothing.
+If the first option is `false` or `null`, then the plugin does nothing.
 
 ---
 
