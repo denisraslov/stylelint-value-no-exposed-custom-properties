@@ -1,4 +1,4 @@
-# Stylelint Value No Exposed Custom Properties <img src="https://jonathantneal.github.io/stylelint-logo.svg" alt="stylelint" width="90" height="90" align="right">
+# Value No Exposed Custom Properties <img src="https://jonathantneal.github.io/stylelint-logo.svg" alt="stylelint" width="90" height="90" align="right">
 
 A [stylelint](https://github.com/stylelint/stylelint) rule to disallow usage of exposed custom properties.
 
