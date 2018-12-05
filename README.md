@@ -10,7 +10,7 @@ npm install stylelint-value-no-exposed-custom-properties
 
 ## Usage
 
-Add the plugin to your [stylelint configuration].
+Add the plugin to your *stylelint configuration*.
 
 ```js
 {
