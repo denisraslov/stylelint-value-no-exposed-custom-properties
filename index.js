@@ -2,7 +2,7 @@ import stylelint from 'stylelint';
 import getCustomPropertiesFromRoot from './lib/get-custom-properties-from-root';
 import getCustomPropertiesFromImports from './lib/get-custom-properties-from-imports';
 
-const ruleName = 'plugin/postcss-custom-properties';
+const ruleName = 'plugin/value-no-exposed-custom-properties';
 
 function isCustomPropertyDecl(prop) {
   return prop.includes('--');
