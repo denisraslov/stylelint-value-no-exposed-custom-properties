@@ -2,13 +2,36 @@
   "name": "stylelint-postcss-custom-properties",
   "version": "1.2.0",
   "description": "A stylelint plugin that reveals values defined with postcss-custom-properties",
-  "main": "index.js",
+  "main": "index.cjs.js",
+  "module": "index.es.mjs",
+  "files": [
+    "index.cjs.js",
+    "index.cjs.js.map",
+    "index.es.mjs",
+    "index.es.mjs.map"
+  ],
   "scripts": {
+    "build": "rollup -c .rollup.js --silent",
     "test": "node test"
   },
-  "files": [
-    "index.js"
-  ],
+  "engines": {
+    "node": ">=6.0.0"
+  },
+  "author": "Denis Raslov <denis.raslov@yandex.ru>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.1.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "rollup": "^0.66.2",
+    "rollup-plugin-babel": "^4.0.3",
+    "stylelint": "^9.5.0",
+    "stylelint-test-rule-tape": "^0.2.0",
+    "tap-spec": "^5.0.0"
+  },
+  "peerDependencies": {
+    "stylelint": "^9.5.0"
+  },
   "keywords": [
     "stylelint",
     "stylelint-plugin",
@@ -16,15 +39,6 @@
     "linter",
     "css-variables",
     "custom-properties",
-    "postcss",
-    "postcss-custom-properties"
-  ],
-  "author": "Denis Raslov <denis.raslov@yandex.ru>",
-  "license": "MIT",
-  "dependencies": {
-    "stylelint": ">=3.0.2"
-  },
-  "devDependencies": {
-    "stylelint-test-rule-tape": "^0.2.0"
-  }
+    "css-custom-properties"
+  ]
 }
